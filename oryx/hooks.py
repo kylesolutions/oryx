@@ -242,3 +242,8 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+doc_events = {
+    "Delivery Note": {
+        "on_submit": "oryx.oryx.auto_delivery_trip.create_kyle_delivery_trips"
+    }
+}

@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-02-06 10:58:09.867856",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "naming_series",
+  "section_break_mezx",
+  "driver",
+  "vehicle",
+  "column_break_gghq",
+  "posting_date",
+  "posting_time",
+  "delivery_note",
+  "section_break_dzek",
+  "kyle_delivery_stop"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_mezx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Driver"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "column_break_gghq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Autocomplete",
+   "label": "Delivery Note"
+  },
+  {
+   "fieldname": "section_break_dzek",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "bold": 1,
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "MAT-KDT-.YYYY.-",
+   "print_hide": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "kyle_delivery_stop",
+   "fieldtype": "Table",
+   "label": "Kyle Delivery Stop",
+   "options": "Kyle Delivery Stop"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-07 08:31:26.457803",
+ "modified_by": "Administrator",
+ "module": "Oryx",
+ "name": "Kyle Delivery Trip",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
