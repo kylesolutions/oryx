@@ -33,7 +33,7 @@ def create_kyle_delivery_trips(doc, method):
             continue
 
         # Create new Kyle Delivery Trip
-        kyle_trip = frappe.new_doc("Kyle Delivery Trip")
+        kyle_trip = frappe.new_doc("Oryx Delivery Trip")
         kyle_trip.company = doc.company or frappe.defaults.get_user_default("Company")
         kyle_trip.vehicle = vehicle
         kyle_trip.driver = driver
