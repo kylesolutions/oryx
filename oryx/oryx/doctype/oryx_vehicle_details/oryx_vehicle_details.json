@@ -1,9 +1,8 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-01-22 15:40:40.039177",
+ "creation": "2025-02-06 11:15:09.875549",
  "doctype": "DocType",
- "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "vehicle",
@@ -11,8 +10,7 @@
   "loaded_qty",
   "meter_reading",
   "before_loading",
-  "after_loading",
-  "warehouse"
+  "after_loading"
  ],
  "fields": [
   {
@@ -31,43 +29,36 @@
   },
   {
    "fieldname": "loaded_qty",
-   "fieldtype": "Data",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Loaded Qty"
   },
   {
    "fieldname": "meter_reading",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Meter Reading"
   },
   {
    "fieldname": "before_loading",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Before Loading"
   },
   {
    "fieldname": "after_loading",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "After Loading"
-  },
-  {
-   "fetch_from": "vehicle.custom_warehouse",
-   "fieldname": "warehouse",
-   "fieldtype": "Link",
-   "label": "Warehouse",
-   "options": "Warehouse"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-12 14:50:33.392822",
+ "modified": "2025-02-06 11:21:53.535403",
  "modified_by": "Administrator",
  "module": "Oryx",
- "name": "Vehicle Details",
+ "name": "Oryx Vehicle Details",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

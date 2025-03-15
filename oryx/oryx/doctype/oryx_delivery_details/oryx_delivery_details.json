@@ -1,44 +1,43 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-02-06 11:09:11.701458",
+ "creation": "2025-03-04 15:28:00.512734",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "customer",
-  "item_code",
-  "quantity"
+  "event",
+  "time",
+  "date"
  ],
  "fields": [
   {
-   "fieldname": "customer",
+   "fieldname": "event",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Customer",
-   "options": "Customer"
+   "label": "Event",
+   "options": "Oryx Event"
   },
   {
-   "fieldname": "item_code",
-   "fieldtype": "Link",
+   "fieldname": "time",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Item Code",
-   "options": "Item"
+   "label": "Time "
   },
   {
-   "fieldname": "quantity",
-   "fieldtype": "Float",
+   "fieldname": "date",
+   "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Quantity"
+   "label": "Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-02-06 11:11:33.660952",
+ "modified": "2025-03-15 16:03:06.780240",
  "modified_by": "Administrator",
  "module": "Oryx",
- "name": "Kyle Delivery Stop",
+ "name": "Oryx Delivery Details",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

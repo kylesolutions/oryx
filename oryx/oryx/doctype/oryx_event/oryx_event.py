@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class KyleDeliveryDetails(Document):
+class OryxEvent(Document):
 	pass

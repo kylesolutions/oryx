@@ -83,7 +83,7 @@
    "fieldname": "kyle_delivery_stop",
    "fieldtype": "Table",
    "label": "Kyle Delivery Stop",
-   "options": "Kyle Delivery Stop"
+   "options": "Oryx Delivery Stop"
   },
   {
    "fieldname": "meter_reading_after",
@@ -114,10 +114,10 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-13 14:47:08.070769",
+ "modified": "2025-03-15 16:03:56.448103",
  "modified_by": "Administrator",
  "module": "Oryx",
- "name": "Kyle Delivery Trip",
+ "name": "Oryx Delivery Trip",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [

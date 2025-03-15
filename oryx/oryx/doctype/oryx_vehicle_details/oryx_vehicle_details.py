@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class KyleDeliveryTrip(Document):
+class OryxVehicleDetails(Document):
 	pass

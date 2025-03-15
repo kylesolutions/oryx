@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 import frappe
 
 def create_kyle_delivery_trips(doc, method):
@@ -11,13 +20,13 @@ def create_kyle_delivery_trips(doc, method):
     created_trips = 0
 
     for vehicle_detail in doc.items:
-        vehicle = vehicle_detail.custom_vehicle
-        driver = vehicle_detail.custom_driver
-        meter_reading = vehicle_detail.custom_meter_reading_before
-        after_meter_reading = vehicle_detail.custom_meter_reading_after
-        before_loading = vehicle_detail.custom_before_loading_weight
-        after_loading = vehicle_detail.custom_after_loading_weight
-        loading_uom = vehicle_detail.custom_loading_uom
+        vehicle = vehicle_detail.vehicle
+        driver = vehicle_detail.driver
+        meter_reading = vehicle_detail.meter_reading_before
+        after_meter_reading = vehicle_detail.meter_reading_after
+        before_loading = vehicle_detail.before_loading_weight
+        after_loading = vehicle_detail.after_loading_weight
+        loading_uom = vehicle_detail.loading_uom
 
         if not vehicle or not driver:
             frappe.log_error(f"Missing vehicle or driver in vehicle_detail: {vehicle_detail}", "Kyle Delivery Trip Creation Error")
@@ -33,9 +42,11 @@ def create_kyle_delivery_trips(doc, method):
         kyle_trip.before_loading_weight = before_loading
         kyle_trip.after_loading_weight = after_loading
         kyle_trip.loading_uom = loading_uom
+        kyle_trip.delivery_note = doc.name
+        
         try:
             kyle_trip.insert()
-            kyle_trip.submit()
+            kyle_trip.save()
             created_trips += 1
         except frappe.ValidationError as e:
             frappe.log_error(f"Error creating Kyle Delivery Trip: {str(e)}", "Kyle Delivery Trip Creation Error")

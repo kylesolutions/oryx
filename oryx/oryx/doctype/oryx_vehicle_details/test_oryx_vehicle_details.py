@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestKyleEvent(FrappeTestCase):
+class TestOryxVehicleDetails(FrappeTestCase):
 	pass

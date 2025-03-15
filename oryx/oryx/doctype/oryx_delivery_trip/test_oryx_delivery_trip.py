@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestKyleVehicleDetails(FrappeTestCase):
+class TestOryxDeliveryTrip(FrappeTestCase):
 	pass

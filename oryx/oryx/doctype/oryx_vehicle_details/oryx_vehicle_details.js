@@ -1,7 +1,7 @@
 // Copyright (c) 2025, vivek and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Kyle Vehicle Details", {
+// frappe.ui.form.on("Oryx Vehicle Details", {
 // 	refresh(frm) {
 
 // 	},
