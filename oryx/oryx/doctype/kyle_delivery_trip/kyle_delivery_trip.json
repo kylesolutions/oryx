@@ -11,10 +11,15 @@
   "section_break_mezx",
   "driver",
   "vehicle",
+  "meter_rading_before",
+  "meter_reading_after",
+  "loading_uom",
   "column_break_gghq",
   "posting_date",
   "posting_time",
   "delivery_note",
+  "before_loading_weight",
+  "after_loading_weight",
   "section_break_dzek",
   "kyle_delivery_stop"
  ],
@@ -79,11 +84,37 @@
    "fieldtype": "Table",
    "label": "Kyle Delivery Stop",
    "options": "Kyle Delivery Stop"
+  },
+  {
+   "fieldname": "meter_reading_after",
+   "fieldtype": "Float",
+   "label": "Meter Reading After"
+  },
+  {
+   "fieldname": "meter_rading_before",
+   "fieldtype": "Float",
+   "label": "Meter Rading Before"
+  },
+  {
+   "fieldname": "loading_uom",
+   "fieldtype": "Link",
+   "label": "Loading UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "before_loading_weight",
+   "fieldtype": "Float",
+   "label": "Before Loading Weight"
+  },
+  {
+   "fieldname": "after_loading_weight",
+   "fieldtype": "Float",
+   "label": "After Loading Weight"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-07 08:31:26.457803",
+ "modified": "2025-03-13 14:47:08.070769",
  "modified_by": "Administrator",
  "module": "Oryx",
  "name": "Kyle Delivery Trip",

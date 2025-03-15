@@ -244,6 +244,13 @@ app_license = "mit"
 
 doc_events = {
     "Delivery Note": {
-        "on_submit": "oryx.oryx.auto_delivery_trip.create_kyle_delivery_trips"
+        "on_submit": "oryx.oryx.auto_kyle_delivery_trip.create_kyle_delivery_trips"
+    }
+}
+
+
+doc_events = {
+    "Purchase Receipt": {
+        "on_submit": "oryx.oryx.stock_entry.create_stock_entry"
     }
 }
