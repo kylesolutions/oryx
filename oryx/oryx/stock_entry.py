@@ -63,3 +63,8 @@ def create_stock_entry(doc, method):
         error_message = f"Error creating Stock Entry for Purchase Receipt {doc.name}: {str(e)}"
         frappe.log_error(error_message, "Auto Stock Entry Error")
         frappe.throw(f"Error while creating Stock Entry: {str(e)}")
+
+
+
+
+

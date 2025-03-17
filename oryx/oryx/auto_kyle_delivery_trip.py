@@ -1,20 +1,13 @@
 
 
-
-
-
-
-
-
-
 import frappe
 
 def create_kyle_delivery_trips(doc, method):
     """
-    Automatically create Kyle Delivery Trips based on the number of vehicles in the Delivery Note.
+    Automatically create Oryx Delivery Trips based on the number of vehicles in the Delivery Note.
     """
     if not doc.items:
-        frappe.msgprint("No vehicle details found in custom_kyle_vehicle_details.")
+        frappe.msgprint("No vehicle details found in custom_oryx_vehicle_details.")
         return
 
     created_trips = 0
@@ -29,7 +22,7 @@ def create_kyle_delivery_trips(doc, method):
         loading_uom = vehicle_detail.loading_uom
 
         if not vehicle or not driver:
-            frappe.log_error(f"Missing vehicle or driver in vehicle_detail: {vehicle_detail}", "Kyle Delivery Trip Creation Error")
+            frappe.log_error(f"Missing vehicle or driver in vehicle_detail: {vehicle_detail}", "Oryx Delivery Trip Creation Error")
             continue
 
         # Create new Kyle Delivery Trip
@@ -49,11 +42,15 @@ def create_kyle_delivery_trips(doc, method):
             kyle_trip.save()
             created_trips += 1
         except frappe.ValidationError as e:
-            frappe.log_error(f"Error creating Kyle Delivery Trip: {str(e)}", "Kyle Delivery Trip Creation Error")
+            frappe.log_error(f"Error creating Oryx Delivery Trip: {str(e)}", "Oryx Delivery Trip Creation Error")
         except Exception as e:
-            frappe.log_error(f"Unexpected error: {str(e)}", "Kyle Delivery Trip Creation Error")
+            frappe.log_error(f"Unexpected error: {str(e)}", "Oryx Delivery Trip Creation Error")
 
     if created_trips > 0:
-        frappe.msgprint(f"{created_trips} Kyle Delivery Trips Created and Submitted.")
+        frappe.msgprint(f"{created_trips} Oryx Delivery Trips Created and Submitted.")
     else:
-        frappe.msgprint("No Kyle Delivery Trips were submitted.")
+        frappe.msgprint("No Oryx Delivery Trips were submitted.")
+
+
+
+
