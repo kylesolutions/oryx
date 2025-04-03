@@ -12,7 +12,7 @@ def create_stock_entry(doc, method):
             "stock_entry_type": "Material Transfer",
             "posting_date": doc.posting_date,
             "posting_time": doc.posting_time,
-            "custom_purchase_receipt": doc.name,
+            "purchase_receipt_no": doc.name,
             "items": []
         })
 

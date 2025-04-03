@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-02-06 11:15:09.875549",
+ "creation": "2025-03-18 13:25:41.116600",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -10,7 +10,7 @@
   "warehouse",
   "driver",
   "loaded_qty",
-  "receiving_status",
+  "delivery_status",
   "column_break_wbuo",
   "meter_reading",
   "before_loading",
@@ -29,6 +29,13 @@
    "options": "Vehicle"
   },
   {
+   "fetch_from": "vehicle.custom_warehouse",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse"
+  },
+  {
    "fieldname": "driver",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -39,7 +46,18 @@
    "fieldname": "loaded_qty",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Loading Qty"
+   "label": "Loaded Qty"
+  },
+  {
+   "fieldname": "delivery_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Delivery Status",
+   "options": "Not Delivered\nDelivered"
+  },
+  {
+   "fieldname": "column_break_wbuo",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "meter_reading",
@@ -54,26 +72,15 @@
    "label": "Weight(BL)"
   },
   {
+   "fieldname": "meter_readingal",
+   "fieldtype": "Float",
+   "label": "Meter Reading(AL)"
+  },
+  {
    "fieldname": "after_loading",
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Weight(AL)"
-  },
-  {
-   "fetch_from": "vehicle.custom_warehouse",
-   "fieldname": "warehouse",
-   "fieldtype": "Link",
-   "label": "Warehouse",
-   "options": "Warehouse"
-  },
-  {
-   "fieldname": "column_break_wbuo",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "meter_readingal",
-   "fieldtype": "Float",
-   "label": "Meter Reading(AL)"
   },
   {
    "fieldname": "net_weight",
@@ -81,17 +88,9 @@
    "label": "Net Weight"
   },
   {
-   "default": "Pending",
-   "fieldname": "receiving_status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Good Receiving Status",
-   "options": "Pending\nIn Progress\nCompleted"
-  },
-  {
    "fieldname": "loading_point",
    "fieldtype": "Link",
-   "label": "Loading Point",
+   "label": "Delivery Point",
    "options": "Address"
   },
   {
@@ -104,10 +103,10 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-24 08:44:35.449651",
+ "modified": "2025-03-18 13:29:59.017170",
  "modified_by": "Administrator",
  "module": "Oryx",
- "name": "Oryx Vehicle Details",
+ "name": "DO Vehicle Details",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

@@ -1,5 +1,3 @@
-
-
 import frappe
 
 def create_kyle_delivery_trips(doc, method):
@@ -13,13 +11,16 @@ def create_kyle_delivery_trips(doc, method):
     created_trips = 0
 
     for vehicle_detail in doc.items:
-        vehicle = vehicle_detail.vehicle
-        driver = vehicle_detail.driver
-        meter_reading = vehicle_detail.meter_reading_before
-        after_meter_reading = vehicle_detail.meter_reading_after
-        before_loading = vehicle_detail.before_loading_weight
-        after_loading = vehicle_detail.after_loading_weight
-        loading_uom = vehicle_detail.loading_uom
+        vehicle = vehicle_detail.custom_vehicle
+        driver = vehicle_detail.custom_driver
+        meter_reading = vehicle_detail.custom_meter_reading_before
+        after_meter_reading = vehicle_detail.custom_meter_reading_after   
+        before_loading = vehicle_detail.custom_before_loading_weight
+        after_loading = vehicle_detail.custom_after_loading_weight
+        loading_uom = vehicle_detail.custom_loading_uom
+        item_code = vehicle_detail.item_code
+        qty = vehicle_detail.custom_delivered_qty
+        row_id = vehicle_detail.name 
 
         if not vehicle or not driver:
             frappe.log_error(f"Missing vehicle or driver in vehicle_detail: {vehicle_detail}", "Oryx Delivery Trip Creation Error")
@@ -30,12 +31,16 @@ def create_kyle_delivery_trips(doc, method):
         kyle_trip.company = doc.company or frappe.defaults.get_user_default("Company")
         kyle_trip.vehicle = vehicle
         kyle_trip.driver = driver
-        kyle_trip.meter_reading_before = meter_reading
-        kyle_trip.meter_reading_after = after_meter_reading
+        kyle_trip.meter_reading_after = meter_reading
+        kyle_trip.meter_readingal = after_meter_reading
         kyle_trip.before_loading_weight = before_loading
         kyle_trip.after_loading_weight = after_loading
         kyle_trip.loading_uom = loading_uom
         kyle_trip.delivery_note = doc.name
+        kyle_trip.item_code = item_code
+        kyle_trip.qty = qty
+        kyle_trip.posting_date = doc.posting_date
+        kyle_trip.row_id = row_id
         
         try:
             kyle_trip.insert()

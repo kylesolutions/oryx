@@ -1,0 +1,269 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-03-20 10:49:29.104221",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ly2q",
+  "column_break_ytjf",
+  "vehicle",
+  "default_vehicle_weight",
+  "driver",
+  "driver_name",
+  "qty",
+  "loading_point",
+  "address",
+  "naming_series",
+  "column_break_phlg",
+  "meter_readingbl",
+  "weightbl",
+  "meter_readingal",
+  "weightal",
+  "net_weight",
+  "loading_uom",
+  "column_break_qzcz",
+  "time",
+  "date",
+  "item_code",
+  "default_item_weight",
+  "supplier",
+  "tab_2_tab",
+  "accepted_trip_latitude",
+  "accepted_trip_longitude",
+  "accepted_trip_link",
+  "column_break_ccuh",
+  "start_trip_latitude",
+  "start_trip_longitude",
+  "start_trip_link",
+  "column_break_mjgf",
+  "end_trip_latitude",
+  "end_trip_longitude",
+  "end_trip_link",
+  "section_break_kbvs",
+  "po_form"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Driver"
+  },
+  {
+   "fetch_from": "driver.full_name",
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "label": "Qty"
+  },
+  {
+   "fieldname": "meter_readingbl",
+   "fieldtype": "Float",
+   "label": "Meter Reading(BL)"
+  },
+  {
+   "fieldname": "weightbl",
+   "fieldtype": "Float",
+   "label": "Weight(BL)",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "meter_readingal",
+   "fieldtype": "Float",
+   "label": "Meter Reading(AL)"
+  },
+  {
+   "fieldname": "weightal",
+   "fieldtype": "Float",
+   "label": "Weight(AL)"
+  },
+  {
+   "fieldname": "loading_point",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Loading Point",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_phlg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "po_form",
+   "fieldtype": "Link",
+   "label": "PO Form",
+   "options": "PO Form"
+  },
+  {
+   "fieldname": "column_break_ytjf",
+   "fieldtype": "Column Break",
+   "options": "GRT.-.YY.-.####"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "GRT.-.YY.-.####"
+  },
+  {
+   "fieldname": "column_break_qzcz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "accepted_trip_latitude",
+   "fieldtype": "Data",
+   "label": "Accepted Trip Latitude"
+  },
+  {
+   "fieldname": "accepted_trip_longitude",
+   "fieldtype": "Data",
+   "label": " Accepted Trip Longitude"
+  },
+  {
+   "fieldname": "start_trip_longitude",
+   "fieldtype": "Data",
+   "label": "Start Trip Longitude"
+  },
+  {
+   "fieldname": "end_trip_latitude",
+   "fieldtype": "Data",
+   "label": "End Trip Latitude"
+  },
+  {
+   "fieldname": "end_trip_longitude",
+   "fieldtype": "Data",
+   "label": "End Trip Longitude"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ly2q",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "vehicle.custom_default_weight",
+   "fieldname": "default_vehicle_weight",
+   "fieldtype": "Data",
+   "label": "Default Vehicle Weight"
+  },
+  {
+   "fetch_from": "item_code.custom_default_item_weight",
+   "fieldname": "default_item_weight",
+   "fieldtype": "Data",
+   "label": "Default Item Weight"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Locations"
+  },
+  {
+   "fieldname": "column_break_ccuh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_trip_latitude",
+   "fieldtype": "Data",
+   "label": "Start Trip Latitude"
+  },
+  {
+   "fieldname": "column_break_mjgf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kbvs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "loading_uom",
+   "fieldtype": "Link",
+   "label": "Loading UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "net_weight",
+   "fieldtype": "Data",
+   "label": "Net Weight"
+  },
+  {
+   "fieldname": "accepted_trip_link",
+   "fieldtype": "Data",
+   "label": "Accepted Trip Link"
+  },
+  {
+   "fieldname": "start_trip_link",
+   "fieldtype": "Data",
+   "label": "Start Trip Link"
+  },
+  {
+   "fieldname": "end_trip_link",
+   "fieldtype": "Data",
+   "label": "End Trip Link"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-26 10:15:21.063731",
+ "modified_by": "Administrator",
+ "module": "Oryx",
+ "name": "Goods Receive Trip",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

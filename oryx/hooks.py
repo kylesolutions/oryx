@@ -248,6 +248,9 @@ doc_events = {
     },
      "Purchase Receipt": {
         "on_submit": "oryx.oryx.stock_entry.create_stock_entry"
-    }
+    },
+    "PO Form": {
+        "on_submit": "oryx.oryx.auto_grt.create_goods_receive_trip"
+    },
 }
 

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:name1",
  "creation": "2025-03-15 16:55:33.253296",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -16,15 +17,17 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name"
+   "label": "Name",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-15 16:56:30.705958",
+ "modified": "2025-03-18 09:51:57.667063",
  "modified_by": "Administrator",
  "module": "Oryx",
  "name": "Ship Master",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

@@ -8,20 +8,28 @@
  "field_order": [
   "company",
   "naming_series",
-  "section_break_mezx",
-  "driver",
-  "vehicle",
-  "meter_rading_before",
-  "meter_reading_after",
-  "loading_uom",
-  "column_break_gghq",
+  "row_id",
+  "column_break_rcym",
   "posting_date",
   "posting_time",
   "delivery_note",
+  "section_break_mezx",
+  "item_code",
+  "item_name",
+  "qty",
+  "driver",
+  "vehicle",
+  "warehouse",
+  "column_break_imxq",
+  "loading_uom",
+  "meter_reading_after",
   "before_loading_weight",
+  "meter_readingal",
   "after_loading_weight",
-  "section_break_dzek",
-  "kyle_delivery_stop"
+  "column_break_gghq",
+  "delivery_status",
+  "rescheduled_date",
+  "reason"
  ],
  "fields": [
   {
@@ -57,11 +65,8 @@
   {
    "fieldname": "delivery_note",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": "Delivery Note"
-  },
-  {
-   "fieldname": "section_break_dzek",
-   "fieldtype": "Section Break"
   },
   {
    "fieldname": "company",
@@ -80,20 +85,9 @@
    "set_only_once": 1
   },
   {
-   "fieldname": "kyle_delivery_stop",
-   "fieldtype": "Table",
-   "label": "Kyle Delivery Stop",
-   "options": "Oryx Delivery Stop"
-  },
-  {
    "fieldname": "meter_reading_after",
    "fieldtype": "Float",
-   "label": "Meter Reading After"
-  },
-  {
-   "fieldname": "meter_rading_before",
-   "fieldtype": "Float",
-   "label": "Meter Rading Before"
+   "label": "Meter Reading(BL)"
   },
   {
    "fieldname": "loading_uom",
@@ -104,17 +98,79 @@
   {
    "fieldname": "before_loading_weight",
    "fieldtype": "Float",
-   "label": "Before Loading Weight"
+   "label": "Weight(BL)"
   },
   {
    "fieldname": "after_loading_weight",
    "fieldtype": "Float",
-   "label": "After Loading Weight"
+   "label": "Weight(AL)"
+  },
+  {
+   "fieldname": "column_break_rcym",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Qty"
+  },
+  {
+   "fieldname": "meter_readingal",
+   "fieldtype": "Float",
+   "label": "Meter Reading(AL)"
+  },
+  {
+   "fieldname": "delivery_status",
+   "fieldtype": "Select",
+   "label": "Delivery Status",
+   "options": "Not Delivered\nDelivered\nCancelled\nRescheduled"
+  },
+  {
+   "depends_on": "eval:doc.delivery_status==\"Rescheduled\"",
+   "fieldname": "rescheduled_date",
+   "fieldtype": "Date",
+   "label": "Rescheduled Date"
+  },
+  {
+   "fieldname": "column_break_imxq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.delivery_status==\"Cancelled\"",
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "row_id",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "label": "Row Id"
+  },
+  {
+   "fetch_from": "vehicle.custom_warehouse",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-15 16:03:56.448103",
+ "modified": "2025-03-26 14:37:57.450612",
  "modified_by": "Administrator",
  "module": "Oryx",
  "name": "Oryx Delivery Trip",

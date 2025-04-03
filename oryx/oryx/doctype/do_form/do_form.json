@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-03-18 13:01:02.650402",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "naming_series",
+  "delivery_date",
+  "delivery_time",
+  "column_break_hqlg",
+  "delivery_status",
+  "customer",
+  "loading_point",
+  "address_display",
+  "section_break_tlsk",
+  "item_details",
+  "section_break_mfaa",
+  "vehicle_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "DO.-.YY.-.####"
+  },
+  {
+   "fieldname": "delivery_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Delivery Status",
+   "options": "Not Delivered\nDelivered"
+  },
+  {
+   "fieldname": "column_break_hqlg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "loading_point",
+   "fieldtype": "Link",
+   "label": "Delivery Port",
+   "options": "Address"
+  },
+  {
+   "fieldname": "address_display",
+   "fieldtype": "Small Text",
+   "label": "Address Display",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_tlsk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item_details",
+   "fieldtype": "Table",
+   "label": "Item Details",
+   "options": "DO Form Item"
+  },
+  {
+   "fieldname": "section_break_mfaa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vehicle_details",
+   "fieldtype": "Table",
+   "label": "Vehicle Details",
+   "options": "DO Vehicle Details"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date"
+  },
+  {
+   "fieldname": "delivery_time",
+   "fieldtype": "Time",
+   "label": "Delivery Time"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-18 14:17:36.609782",
+ "modified_by": "Administrator",
+ "module": "Oryx",
+ "name": "DO Form",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
