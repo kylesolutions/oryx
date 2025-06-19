@@ -18,16 +18,17 @@ def generate_customer(customer_name):
         "territory": customer.territory or "Default Territory"
     }
 
-    # Site B API details
-    site_b_url = "http://109.199.100.136:1011/api/resource/Customer"
-    api_key = "c921736221b267d"
-    api_secret = "3a0b977b62167a4"
+     # Site B API credentials
+    site_b_url = "http://185.216.75.31:1011/api/resource/Customer"
+    api_key = "92312e181443484"
+    api_secret = "890cbabf643b93a"
 
     # Set headers for the request
     headers = {
-        "Authorization": f"token {api_key}:{api_secret}",
+        "Authorization": f"token 92312e181443484:890cbabf643b93a",
         "Content-Type": "application/json"
     }
+
 
     # Send the request to Site B
     try:

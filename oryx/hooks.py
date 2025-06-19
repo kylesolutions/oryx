@@ -242,15 +242,33 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
-doc_events = {
-    "Delivery Note": {
-        "on_submit": "oryx.oryx.auto_kyle_delivery_trip.create_kyle_delivery_trips"
-    },
-     "Purchase Receipt": {
-        "on_submit": "oryx.oryx.stock_entry.create_stock_entry"
-    },
-    "PO Form": {
-        "on_submit": "oryx.oryx.auto_grt.create_goods_receive_trip"
-    },
-}
+# doc_events = {
+#     "Delivery Note": {
+#         "on_submit": "oryx.oryx.auto_kyle_delivery_trip.create_kyle_delivery_trips"
+#     },
+#     "Purchase Receipt": {
+#         "on_submit": [
+#             "oryx.oryx.stock_entry.create_stock_entry",
+#             "oryx.oryx.auto_grt_pr.goods_receive_trip"
+#         ]
+#     },
+#     "PO Form": {
+#         "on_submit": "oryx.oryx.auto_grt.create_goods_receive_trip",
+                                          
+#     },
+#     "DO Form": {
+#         "on_submit": "oryx.oryx.auto_dt_doform.auto_delivery_trips"
+#     },
+#     "Goods Receive Trip": {
+#         "on_update": "oryx.grt_status.on_update"
+#     },
+#     "Oryx Delivery Trip": {
+#         "on_update": "oryx.dtrip_status.on_update"
+#     },
+# }
 
+doc_events = {
+    "Oryx Delivery plan":{
+        "on_submit":"oryx.oryx.auto_kyle_delivery_trip.create_oryx_delivery_trips_from_plan"
+    }
+}

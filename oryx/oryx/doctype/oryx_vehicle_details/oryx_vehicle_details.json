@@ -7,9 +7,11 @@
  "engine": "InnoDB",
  "field_order": [
   "vehicle",
-  "warehouse",
+  "tank",
   "driver",
+  "driver_name",
   "loaded_qty",
+  "uom",
   "receiving_status",
   "column_break_wbuo",
   "meter_reading",
@@ -45,26 +47,19 @@
    "fieldname": "meter_reading",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Meter Reading(BL)"
+   "label": "Meter Reading(Before Loading)"
   },
   {
    "fieldname": "before_loading",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Weight(BL)"
+   "label": "Weight(Before Loading)"
   },
   {
    "fieldname": "after_loading",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Weight(AL)"
-  },
-  {
-   "fetch_from": "vehicle.custom_warehouse",
-   "fieldname": "warehouse",
-   "fieldtype": "Link",
-   "label": "Warehouse",
-   "options": "Warehouse"
+   "label": "Weight(After Loading)"
   },
   {
    "fieldname": "column_break_wbuo",
@@ -73,7 +68,7 @@
   {
    "fieldname": "meter_readingal",
    "fieldtype": "Float",
-   "label": "Meter Reading(AL)"
+   "label": "Meter Reading(After Loading)"
   },
   {
    "fieldname": "net_weight",
@@ -84,7 +79,6 @@
    "default": "Pending",
    "fieldname": "receiving_status",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Good Receiving Status",
    "options": "Pending\nIn Progress\nCompleted"
   },
@@ -97,14 +91,35 @@
   {
    "fieldname": "address_display",
    "fieldtype": "Small Text",
-   "label": "Address Display",
+   "label": "Loading Address",
    "read_only": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "tank",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tank",
+   "options": "Tank Master"
+  },
+  {
+   "fetch_from": "driver.full_name",
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Driver Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-24 08:44:35.449651",
+ "modified": "2025-04-29 08:32:00.574600",
  "modified_by": "Administrator",
  "module": "Oryx",
  "name": "Oryx Vehicle Details",

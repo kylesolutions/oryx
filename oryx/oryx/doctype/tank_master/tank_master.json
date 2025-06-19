@@ -1,27 +1,27 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:mode_of_delivery",
- "creation": "2025-03-04 14:56:35.722694",
+ "autoname": "field:tank_name",
+ "creation": "2025-04-28 15:35:50.115810",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "mode_of_delivery"
+  "tank_name"
  ],
  "fields": [
   {
-   "fieldname": "mode_of_delivery",
+   "fieldname": "tank_name",
    "fieldtype": "Data",
-   "label": "Mode Of Delivery",
+   "label": "Tank Name",
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-03 12:13:43.497731",
+ "modified": "2025-06-03 12:11:35.329757",
  "modified_by": "Administrator",
  "module": "Oryx",
- "name": "Mode Of Delivery",
+ "name": "Tank Master",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [],

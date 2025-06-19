@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-17 11:06:09.212041",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "vehicle",
+  "driver",
+  "loaded_qty",
+  "delivered_qty",
+  "meter_reading_after",
+  "before_loading_weight",
+  "meter_readingal",
+  "loading_uom"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Driver",
+   "options": "Driver"
+  },
+  {
+   "fieldname": "loaded_qty",
+   "fieldtype": "Data",
+   "label": "Loaded Qty"
+  },
+  {
+   "fieldname": "delivered_qty",
+   "fieldtype": "Data",
+   "label": "Delivered Qty"
+  },
+  {
+   "fieldname": "meter_reading_after",
+   "fieldtype": "Float",
+   "label": "Meter Reading (Before Loading)"
+  },
+  {
+   "fieldname": "before_loading_weight",
+   "fieldtype": "Float",
+   "label": "Weight (Before Loading)"
+  },
+  {
+   "fieldname": "meter_readingal",
+   "fieldtype": "Float",
+   "label": "Meter Reading After Loading"
+  },
+  {
+   "fieldname": "loading_uom",
+   "fieldtype": "Link",
+   "label": "Loading UOM",
+   "options": "UOM"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-19 08:29:23.340455",
+ "modified_by": "Administrator",
+ "module": "Oryx",
+ "name": "Vehicle Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

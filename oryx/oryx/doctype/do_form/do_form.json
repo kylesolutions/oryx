@@ -7,19 +7,34 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "date",
-  "naming_series",
   "delivery_date",
   "delivery_time",
-  "column_break_hqlg",
   "delivery_status",
+  "column_break_hxqd",
+  "date",
+  "naming_series",
+  "po_form",
+  "section_break_grld",
   "customer",
+  "customer_name",
+  "po_no",
+  "po_date",
+  "mode_of_supply",
+  "arrange_surveyor",
+  "column_break_hqlg",
+  "with_vat",
+  "select_port",
+  "ship_name",
+  "berth_no",
+  "vessel_name",
   "loading_point",
   "address_display",
+  "port_address",
   "section_break_tlsk",
   "item_details",
   "section_break_mfaa",
-  "vehicle_details"
+  "vehicle_details",
+  "amended_from"
  ],
  "fields": [
   {
@@ -39,13 +54,14 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Delivery Status",
-   "options": "Not Delivered\nDelivered"
+   "options": "Not Delivered\nIn Progress\nDelivered"
   },
   {
    "fieldname": "column_break_hqlg",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.select_port==1",
    "fieldname": "loading_point",
    "fieldtype": "Link",
    "label": "Delivery Port",
@@ -54,7 +70,7 @@
   {
    "fieldname": "address_display",
    "fieldtype": "Small Text",
-   "label": "Address Display",
+   "label": "Port Address",
    "read_only": 1
   },
   {
@@ -82,7 +98,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Customer",
-   "options": "Customer"
+   "options": "Customer",
+   "reqd": 1
   },
   {
    "fieldname": "delivery_date",
@@ -93,30 +110,121 @@
    "fieldname": "delivery_time",
    "fieldtype": "Time",
    "label": "Delivery Time"
+  },
+  {
+   "default": "0",
+   "fieldname": "with_vat",
+   "fieldtype": "Check",
+   "label": "WIth VAT"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "DO Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "select_port",
+   "fieldtype": "Check",
+   "label": "Select Port"
+  },
+  {
+   "depends_on": "eval:doc.select_port==0",
+   "fieldname": "port_address",
+   "fieldtype": "Small Text",
+   "label": "Port Address"
+  },
+  {
+   "fieldname": "berth_no",
+   "fieldtype": "Data",
+   "label": "Berth No"
+  },
+  {
+   "fieldname": "ship_name",
+   "fieldtype": "Link",
+   "label": "Ship Name",
+   "options": "Ship Master"
+  },
+  {
+   "fieldname": "vessel_name",
+   "fieldtype": "Data",
+   "label": "Vessel Name"
+  },
+  {
+   "fieldname": "po_no",
+   "fieldtype": "Data",
+   "label": "Nomination Number"
+  },
+  {
+   "fieldname": "po_date",
+   "fieldtype": "Date",
+   "label": "Nomination Date"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "po_form",
+   "fieldtype": "Link",
+   "label": "BDR",
+   "options": "PO Form"
+  },
+  {
+   "fieldname": "section_break_grld",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mode_of_supply",
+   "fieldtype": "Select",
+   "label": "Mode Of Supply",
+   "options": "\nWeigh Bridge\nFlow Meter\nVessel Sounding"
+  },
+  {
+   "fieldname": "arrange_surveyor",
+   "fieldtype": "Select",
+   "label": "Arrange Surveyor",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_hxqd",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-03-18 14:17:36.609782",
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Links",
+   "link_doctype": "Sales Order",
+   "link_fieldname": "custom_do_form"
+  },
+  {
+   "group": "Links",
+   "link_doctype": "Delivery Note",
+   "link_fieldname": "custom_do_form"
+  },
+  {
+   "group": "Links",
+   "link_doctype": "Oryx Delivery Trip",
+   "link_fieldname": "delivery_note"
+  }
+ ],
+ "modified": "2025-06-03 12:11:15.060480",
  "modified_by": "Administrator",
  "module": "Oryx",
  "name": "DO Form",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

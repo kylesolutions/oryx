@@ -29,6 +29,10 @@
   "item_code",
   "default_item_weight",
   "supplier",
+  "supplier_name",
+  "receive_status",
+  "rescheduled_date",
+  "reason",
   "tab_2_tab",
   "accepted_trip_latitude",
   "accepted_trip_longitude",
@@ -42,7 +46,8 @@
   "end_trip_longitude",
   "end_trip_link",
   "section_break_kbvs",
-  "po_form"
+  "po_form",
+  "purchase_receipt"
  ],
  "fields": [
   {
@@ -105,7 +110,7 @@
   {
    "fieldname": "po_form",
    "fieldtype": "Link",
-   "label": "PO Form",
+   "label": "BDR",
    "options": "PO Form"
   },
   {
@@ -171,6 +176,7 @@
    "label": "End Trip Longitude"
   },
   {
+   "fetch_from": "po_form.address_display",
    "fieldname": "address",
    "fieldtype": "Small Text",
    "label": "Address",
@@ -239,30 +245,47 @@
    "fieldname": "end_trip_link",
    "fieldtype": "Data",
    "label": "End Trip Link"
+  },
+  {
+   "fieldname": "purchase_receipt",
+   "fieldtype": "Autocomplete",
+   "label": "Purchase Receipt"
+  },
+  {
+   "depends_on": "eval:doc.receive_status==\"Rescheduled\"",
+   "fieldname": "rescheduled_date",
+   "fieldtype": "Data",
+   "label": "Rescheduled Date"
+  },
+  {
+   "depends_on": "eval:doc.receive_status==\"Cancelled\"",
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  },
+  {
+   "fieldname": "receive_status",
+   "fieldtype": "Select",
+   "label": "Receive Status",
+   "options": "Not Received\nReceived\nCancelled\nRescheduled"
+  },
+  {
+   "fetch_from": "supplier.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-26 10:15:21.063731",
+ "modified": "2025-06-03 12:12:41.341195",
  "modified_by": "Administrator",
  "module": "Oryx",
  "name": "Goods Receive Trip",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

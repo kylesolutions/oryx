@@ -13,8 +13,13 @@
   "collection_status",
   "column_break_hqlg",
   "supplier",
+  "supplier_name",
+  "with_vat",
+  "select_port",
   "loading_point",
+  "berth_no",
   "address_display",
+  "port",
   "section_break_tlsk",
   "item_details",
   "section_break_mfaa",
@@ -72,21 +77,23 @@
   {
    "fieldname": "address_display",
    "fieldtype": "Small Text",
-   "label": "Address Display",
+   "label": "Loading Address",
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.select_port == 1",
    "fieldname": "loading_point",
    "fieldtype": "Link",
-   "label": "Loading Bay",
+   "label": "Loading Point",
    "options": "Address"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "collection_status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Collection Status",
-   "options": "In Progress\nReceived"
+   "options": "Not Received\nIn Progress\nReceived"
   },
   {
    "fieldname": "vehicle_details",
@@ -103,37 +110,69 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "with_vat",
+   "fieldtype": "Check",
+   "label": "With VAT"
+  },
+  {
+   "default": "0",
+   "fieldname": "select_port",
+   "fieldtype": "Check",
+   "label": "Select Port"
+  },
+  {
+   "depends_on": "eval:doc.select_port == 0",
+   "fieldname": "port",
+   "fieldtype": "Small Text",
+   "label": "Port"
+  },
+  {
+   "fieldname": "berth_no",
+   "fieldtype": "Data",
+   "label": "Berth No"
+  },
+  {
+   "fetch_from": "supplier.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [
   {
-   "group": "GRT",
+   "group": "Links",
    "link_doctype": "Goods Receive Trip",
    "link_fieldname": "po_form"
+  },
+  {
+   "group": "Links",
+   "link_doctype": "DO Form",
+   "link_fieldname": "po_form"
+  },
+  {
+   "group": "Links",
+   "link_doctype": "Purchase Order",
+   "link_fieldname": "custom_po_form"
+  },
+  {
+   "group": "Links",
+   "link_doctype": "Purchase Receipt",
+   "link_fieldname": "custom_po_form"
   }
  ],
- "modified": "2025-03-24 08:46:21.120253",
+ "modified": "2025-06-03 12:10:28.427439",
  "modified_by": "Administrator",
  "module": "Oryx",
  "name": "PO Form",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

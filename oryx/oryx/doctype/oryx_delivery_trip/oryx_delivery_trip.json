@@ -9,10 +9,14 @@
   "company",
   "naming_series",
   "row_id",
+  "customer",
+  "customer_name",
+  "do_form",
   "column_break_rcym",
   "posting_date",
   "posting_time",
-  "delivery_note",
+  "delivery_point",
+  "address",
   "section_break_mezx",
   "item_code",
   "item_name",
@@ -29,7 +33,21 @@
   "column_break_gghq",
   "delivery_status",
   "rescheduled_date",
-  "reason"
+  "reason",
+  "locations_tab",
+  "accepted_trip_latitude",
+  "accepted_trip_longitude",
+  "accepted_trip_link",
+  "column_break_hzit",
+  "start_trip_latitude",
+  "start_trip_longitude",
+  "start_trip_link",
+  "column_break_qbzl",
+  "end_trip_latitude",
+  "end_trip_longitude",
+  "end_trip_link",
+  "section_break_zlud",
+  "delivery_note"
  ],
  "fields": [
   {
@@ -63,12 +81,6 @@
    "label": "Posting Time"
   },
   {
-   "fieldname": "delivery_note",
-   "fieldtype": "Autocomplete",
-   "in_list_view": 1,
-   "label": "Delivery Note"
-  },
-  {
    "fieldname": "company",
    "fieldtype": "Link",
    "label": "Company",
@@ -87,7 +99,7 @@
   {
    "fieldname": "meter_reading_after",
    "fieldtype": "Float",
-   "label": "Meter Reading(BL)"
+   "label": "Meter Reading(Before Loading)"
   },
   {
    "fieldname": "loading_uom",
@@ -98,12 +110,12 @@
   {
    "fieldname": "before_loading_weight",
    "fieldtype": "Float",
-   "label": "Weight(BL)"
+   "label": "Weight(Before Loading)"
   },
   {
    "fieldname": "after_loading_weight",
    "fieldtype": "Float",
-   "label": "Weight(AL)"
+   "label": "Weight(After Loading)"
   },
   {
    "fieldname": "column_break_rcym",
@@ -123,7 +135,7 @@
   {
    "fieldname": "meter_readingal",
    "fieldtype": "Float",
-   "label": "Meter Reading(AL)"
+   "label": "Meter Reading(After Loading)"
   },
   {
    "fieldname": "delivery_status",
@@ -166,30 +178,114 @@
    "fieldtype": "Link",
    "label": "Warehouse",
    "options": "Warehouse"
+  },
+  {
+   "fieldname": "locations_tab",
+   "fieldtype": "Tab Break",
+   "label": "Locations"
+  },
+  {
+   "fieldname": "accepted_trip_latitude",
+   "fieldtype": "Data",
+   "label": "Accepted Trip Latitude"
+  },
+  {
+   "fieldname": "accepted_trip_longitude",
+   "fieldtype": "Data",
+   "label": "Accepted Trip Longitude"
+  },
+  {
+   "fieldname": "accepted_trip_link",
+   "fieldtype": "Data",
+   "label": "Accepted Trip Link"
+  },
+  {
+   "fieldname": "column_break_hzit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_trip_latitude",
+   "fieldtype": "Data",
+   "label": "Start Trip Latitude"
+  },
+  {
+   "fieldname": "start_trip_longitude",
+   "fieldtype": "Data",
+   "label": "Start Trip Longitude"
+  },
+  {
+   "fieldname": "start_trip_link",
+   "fieldtype": "Data",
+   "label": "Start Trip Link"
+  },
+  {
+   "fieldname": "column_break_qbzl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_trip_latitude",
+   "fieldtype": "Data",
+   "label": "End Trip Latitude"
+  },
+  {
+   "fieldname": "end_trip_longitude",
+   "fieldtype": "Data",
+   "label": "End Trip Longitude"
+  },
+  {
+   "fieldname": "end_trip_link",
+   "fieldtype": "Data",
+   "label": "End Trip Link"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "delivery_point",
+   "fieldtype": "Link",
+   "label": "Delivery Point",
+   "options": "Address"
+  },
+  {
+   "fieldname": "do_form",
+   "fieldtype": "Link",
+   "label": "Bunker Delivery Order",
+   "options": "DO Form"
+  },
+  {
+   "fieldname": "section_break_zlud",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Data",
+   "label": "Delivery Note"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-26 14:37:57.450612",
+ "modified": "2025-06-03 12:12:11.656230",
  "modified_by": "Administrator",
  "module": "Oryx",
  "name": "Oryx Delivery Trip",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
