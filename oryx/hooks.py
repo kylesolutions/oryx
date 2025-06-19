@@ -272,3 +272,4 @@ doc_events = {
         "on_submit":"oryx.oryx.auto_kyle_delivery_trip.create_oryx_delivery_trips_from_plan"
     }
 }
+fixtures = ["Client Script"]
